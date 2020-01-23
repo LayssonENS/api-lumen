@@ -8,8 +8,15 @@ use Symfony\Component\HttpKernel\Client;
 
 class APIControler extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('jwt.auth');
+    }
+
     public function ListaUsuarios()
     {
+
         $json = [
             'usuario' => [
                 'nome' => 'Laysson',

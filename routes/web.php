@@ -14,6 +14,9 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+//LOGIN
+
+$router->post('auth/login', 'AuthController@autenticate');
 
 $router->get('/teste', 'ExampleController@teste');
 $router->get('/lista-usuarios', 'APIControler@ListaUsuarios');
